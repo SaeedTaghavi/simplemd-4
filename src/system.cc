@@ -95,24 +95,6 @@ void System::IntegratePartitionRungeKutta() {
 
     // Calculate Forces
 
-    // Erroneous loop
-    /*  ForceLoop();
-    while(temp!=0) {
-      for(int i=0; i<s; i++) {
-        temp->setx(temp->getx()+dt*B[i]*temp->getvx());
-        temp->sety(temp->gety()+dt*B[i]*temp->getvy());
-        temp->setvx(temp->getvx()+dt*C[i]*temp->getfx());  // Note that the assignment said that the sign should be -, but the paper by Blanes says the sign should be +
-        temp->setvy(temp->getvy()+dt*C[i]*temp->getfy());
-        temp->setx(temp->getx()-size*floor(temp->getx()/size));
-        temp->sety(temp->gety()-size*floor(temp->gety()/size));
-      }
-      temp=temp->getnext();
-    }
-    Kinetic();
-     */
-
-
-    // New loop
     for (int i = 0; i < s; i++) {
         temp = current;
         while (temp != 0) {
